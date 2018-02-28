@@ -28,6 +28,15 @@ CSS is run through [PostCSS](http://postcss.org). Available CSS variables are in
 When adding a new CSS file, you may need to restart the development server.
 
 
+# Commits
+1. Add the button
+1. Get Random Int, print on screen
+1. Add Answer List
+1. Get Random Int in answer List
+1. Small refactor, remove old code
+1. Add to list
+
+
 # Useful Links
 - [Elm Guide](https://guide.elm-lang.org)
 - [Elm Docs](http://elm-lang.org/docs)
