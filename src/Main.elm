@@ -7,7 +7,7 @@ import Update exposing (update)
 
 init : Model
 init =
-    { text = "Hello World"
+    { randNum = 0
     }
 
 
@@ -23,5 +23,6 @@ main =
 view : Model -> Html Msg
 view model =
     div []
-        [ button [] [ text "Ask the Magic Eight" ]
+        [ p [] [ text (toString model.randNum) ]
+        , button [] [ text "Ask the Magic Eight" ]
         ]
