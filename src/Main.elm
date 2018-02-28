@@ -22,4 +22,6 @@ main =
 
 view : Model -> Html Msg
 view model =
-    div [] [ text model.text ]
+    div []
+        [ button [] [ text "Ask the Magic Eight" ]
+        ]
