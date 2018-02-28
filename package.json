@@ -10,7 +10,7 @@
     "elm-install": "node_modules/.bin/elm-package install -y",
     "elm-reactor": "node_modules/.bin/elm-reactor -p 3000",
     "clean-dist": "rm -rf dist/",
-    "start": "yarn elm-reactor & yarn css-watch",
+    "start": "node_modules/.bin/elm-live src/Main.elm --output=dist/elm.js --port=3000",
     "build": "yarn clean-dist && yarn css-build && yarn elm-build"
   },
   "author": "bholtbholt",
@@ -19,6 +19,7 @@
     "autoprefixer": "^7.1.2",
     "elm": "^0.18.0",
     "elm-format": "^0.6.1-alpha",
+    "elm-live": "^2.7.5",
     "postcss-cli": "^4.1.0",
     "postcss-nested": "^2.1.2",
     "postcss-simple-vars": "^4.1.0",
