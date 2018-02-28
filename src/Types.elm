@@ -2,7 +2,7 @@ module Types exposing (..)
 
 
 type alias Model =
-    { text : String }
+    { randNum : Int }
 
 
 type Msg
