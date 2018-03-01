@@ -5,18 +5,21 @@ import Types exposing (..)
 import Update exposing (update)
 
 
-init : Model
+init : ( Model, Cmd Msg )
 init =
-    { randNum = 0
-    }
+    ( { randNum = 0
+      }
+    , Cmd.none
+    )
 
 
 main : Program Never Model Msg
 main =
-    Html.beginnerProgram
+    Html.program
         { view = view
         , update = update
-        , model = init
+        , init = init
+        , subscriptions = always Sub.none
         }
 
 

@@ -30,6 +30,12 @@ When adding a new CSS file, you may need to restart the development server.
 
 # Commits
 1. Add the button
+1. Change from beginnerProgram to Program
+  - html.program, follow compiler
+  - model -> init, add subscriptions
+  - Model -> (Model, Cmd Msg)
+    - Update ( model, Cmd.none )
+    - init
 1. Get Random Int, print on screen
 1. Add Answer List
 1. Get Random Int in answer List
