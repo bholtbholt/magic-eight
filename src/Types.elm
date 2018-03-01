@@ -7,3 +7,5 @@ type alias Model =
 
 type Msg
     = BasicUpdate
+    | GetNumber
+    | NewNumber Int

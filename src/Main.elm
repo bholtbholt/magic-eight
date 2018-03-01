@@ -1,6 +1,7 @@
 module Main exposing (main)
 
 import Html exposing (..)
+import Html.Events exposing (..)
 import Types exposing (..)
 import Update exposing (update)
 
@@ -27,5 +28,5 @@ view : Model -> Html Msg
 view model =
     div []
         [ p [] [ text (toString model.randNum) ]
-        , button [] [ text "Ask the Magic Eight" ]
+        , button [ onClick GetNumber ] [ text "Ask the Magic Eight" ]
         ]
