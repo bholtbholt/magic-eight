@@ -2,16 +2,33 @@ module Update exposing (update)
 
 import Types exposing (..)
 import Random exposing (..)
+import Array exposing (..)
+
+
+resetResponse : String
+resetResponse =
+    ""
+
+
+responseSize : Responses -> Int
+responseSize responses =
+    Array.length responses
+        - 1
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
-        BasicUpdate ->
-            ( model, Cmd.none )
+        RequestResponse ->
+            ( { model | response = resetResponse }
+            , Random.generate ReturnResponse <|
+                Random.int 0 (responseSize model.otherResponses)
+            )
 
-        GetNumber ->
-            ( model, Random.generate NewNumber (Random.int 1 100) )
-
-        NewNumber number ->
-            ( { model | randNum = number }, Cmd.none )
+        ReturnResponse responseIndex ->
+            let
+                response =
+                    Array.get responseIndex model.otherResponses
+                        |> Maybe.withDefault resetResponse
+            in
+                ( { model | response = response }, Cmd.none )

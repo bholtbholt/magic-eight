@@ -7,20 +7,36 @@ import Update exposing (update)
 import Array exposing (..)
 
 
-responses : Array String
-responses =
+initResponses : Array Response
+initResponses =
     Array.fromList
-        [ "Yes"
-        , "Okay"
-        , "No"
+        [ "No, never"
+        , "No no no no no no no"
+        , "It's not the best time"
+        , "Unfortunately, no"
+        , "No thank you"
+        , "Nah"
+        , "uhh…"
+        , "wut"
+        , "lol"
+        , "Meh"
+        , "Tough to say"
+        , "I dno, thinkin about it"
+        , "I guess so, yeah"
+        , "Probs, ya"
+        , "Yes, now leave me alone"
+        , "No question"
+        , "Yep"
+        , "For sure"
+        , "Definitely"
+        , "YAAAAAS"
         ]
 
 
 init : ( Model, Cmd Msg )
 init =
-    ( { randNum = 0
-      , response = ""
-      , otherResponses = responses
+    ( { response = ""
+      , otherResponses = initResponses
       }
     , Cmd.none
     )
@@ -39,6 +55,6 @@ main =
 view : Model -> Html Msg
 view model =
     div []
-        [ p [] [ text (toString model.randNum) ]
-        , button [ onClick GetNumber ] [ text "Ask the Magic Eight" ]
+        [ p [] [ text model.response ]
+        , button [ onClick RequestResponse ] [ text "Ask the Magic Eight" ]
         ]

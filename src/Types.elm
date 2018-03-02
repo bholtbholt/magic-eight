@@ -4,13 +4,23 @@ import Array exposing (..)
 
 
 type alias Model =
-    { randNum : Int
-    , response : String
-    , otherResponses : Array String
+    { response : Response
+    , otherResponses : Responses
     }
 
 
+type alias Responses =
+    Array Response
+
+
+type alias Response =
+    String
+
+
+type alias ResponseIndex =
+    Int
+
+
 type Msg
-    = BasicUpdate
-    | GetNumber
-    | NewNumber Int
+    = RequestResponse
+    | ReturnResponse ResponseIndex
