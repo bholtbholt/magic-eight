@@ -4,11 +4,23 @@ import Html exposing (..)
 import Html.Events exposing (..)
 import Types exposing (..)
 import Update exposing (update)
+import Array exposing (..)
+
+
+responses : Array String
+responses =
+    Array.fromList
+        [ "Yes"
+        , "Okay"
+        , "No"
+        ]
 
 
 init : ( Model, Cmd Msg )
 init =
     ( { randNum = 0
+      , response = ""
+      , otherResponses = responses
       }
     , Cmd.none
     )

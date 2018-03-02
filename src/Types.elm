@@ -1,8 +1,13 @@
 module Types exposing (..)
 
+import Array exposing (..)
+
 
 type alias Model =
-    { randNum : Int }
+    { randNum : Int
+    , response : String
+    , otherResponses : Array String
+    }
 
 
 type Msg

@@ -55,7 +55,12 @@ When adding a new CSS file, you may need to restart the development server.
 * Add event branch for the command that updates the model
 * https://guide.elm-lang.org/architecture/effects/random.html
 
-1.  Add Answer List
+1.  Add Answer Array
+
+* import Array
+* Add response : String, otherResponses : Array String
+* initialize responses
+
 1.  Get Random Int in answer List
 1.  Small refactor, remove old code
 1.  Add to list
