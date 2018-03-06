@@ -6,6 +6,7 @@ import Array exposing (..)
 type alias Model =
     { response : Response
     , otherResponses : Responses
+    , responseIndex : ResponseIndex
     }
 
 

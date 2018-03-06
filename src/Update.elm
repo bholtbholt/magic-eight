@@ -5,11 +5,6 @@ import Random exposing (..)
 import Array exposing (..)
 
 
-resetResponse : String
-resetResponse =
-    ""
-
-
 responseSize : Responses -> Int
 responseSize responses =
     Array.length responses
@@ -20,7 +15,7 @@ update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
         RequestResponse ->
-            ( { model | response = resetResponse }
+            ( model
             , Random.generate ReturnResponse <|
                 Random.int 0 (responseSize model.otherResponses)
             )
@@ -29,6 +24,11 @@ update msg model =
             let
                 response =
                     Array.get responseIndex model.otherResponses
-                        |> Maybe.withDefault resetResponse
+                        |> Maybe.withDefault ""
             in
-                ( { model | response = response }, Cmd.none )
+                ( { model
+                    | response = response
+                    , responseIndex = responseIndex
+                  }
+                , Cmd.none
+                )
