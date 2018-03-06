@@ -1,6 +1,7 @@
 module Main exposing (main)
 
 import Html exposing (..)
+import Html.Attributes exposing (class)
 import Html.Events exposing (..)
 import Types exposing (..)
 import Update exposing (update)
@@ -55,6 +56,12 @@ main =
 view : Model -> Html Msg
 view model =
     div []
-        [ p [] [ text model.response ]
+        [ div [ class "eight-ball" ]
+            [ div [ class "window" ]
+                [ div [ class "triangle" ]
+                    [ div [ class "triangle__message" ] [ text model.response ]
+                    ]
+                ]
+            ]
         , button [ onClick RequestResponse ] [ text "Ask the Magic Eight" ]
         ]

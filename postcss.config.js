@@ -5,24 +5,14 @@ module.exports = {
     require('postcss-simple-vars')({
       variables: {
         $white: '#fff',
-        $body: '#34495e',
+        $body: '#e66767',
+        $bodyAccent: '#ea8685',
 
-        $primaryActive: '#1abc9c',
-        $primaryHighlight: '#1dd5b1',
-        $secondaryActive: '#f1c40f',
+        $primaryActive: '#574b90',
+        $primaryHighlight: '#3E3277',
 
         $radiusRound: '50%',
         $radiusCurved: '6px',
-
-        $trackTitleWidth: '70px',
-
-        $step: '#9aafc4',
-        $stepAlt: '#677c91',
-        $stepShadow: 'rgba(0, 0, 0, .3)',
-
-        $cursor: '#2980b9',
-
-        $playbackControlsBackground: '#000B1D',
 
         $mobile: 'max-width: 699px',
         $desktop: 'min-width: 700px',
