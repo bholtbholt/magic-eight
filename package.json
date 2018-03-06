@@ -7,10 +7,8 @@
     "css-build": "node_modules/.bin/postcss src/css/*.css -c postcss.config.js -d dist/css",
     "css-watch": "node_modules/.bin/postcss src/css/*.css -c postcss.config.js -d dist/css -w",
     "elm-build": "node_modules/.bin/elm-make src/Main.elm --output=dist/elm.js",
-    "elm-install": "node_modules/.bin/elm-package install -y",
-    "elm-reactor": "node_modules/.bin/elm-reactor -p 3000",
     "clean-dist": "rm -rf dist/",
-    "start": "node_modules/.bin/elm-live src/Main.elm --output=dist/elm.js --port=3000",
+    "start": "node_modules/.bin/elm-live src/Main.elm --output=dist/elm.js --port=3000 & yarn css-watch",
     "build": "yarn clean-dist && yarn css-build && yarn elm-build"
   },
   "author": "bholtbholt",
