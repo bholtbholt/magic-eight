@@ -1,6 +1,7 @@
 module Main exposing (main)
 
 import Html exposing (..)
+import Html.Keyed as Keyed
 import Html.Attributes exposing (class)
 import Html.Events exposing (..)
 import Types exposing (..)
@@ -38,6 +39,7 @@ init : ( Model, Cmd Msg )
 init =
     ( { response = ""
       , otherResponses = initResponses
+      , responseIndex = 0
       }
     , Cmd.none
     )
@@ -55,13 +57,23 @@ main =
 
 view : Model -> Html Msg
 view model =
-    div []
-        [ div [ class "eight-ball" ]
-            [ div [ class "window" ]
-                [ div [ class "triangle" ]
-                    [ div [ class "triangle__message" ] [ text model.response ]
-                    ]
+    let
+        showMessage =
+            if model.response /= "" then
+                div
+                    [ class "triangle" ]
+                    [ div [ class "triangle__message" ] [ text model.response ] ]
+            else
+                text ""
+    in
+        div []
+            [ div
+                [ class "eight-ball" ]
+                [ Keyed.node "div"
+                    [ class "window" ]
+                    [ ( toString model.responseIndex, showMessage ) ]
                 ]
+            , button
+                [ onClick RequestResponse ]
+                [ text "Ask the Magic Eight" ]
             ]
-        , button [ onClick RequestResponse ] [ text "Ask the Magic Eight" ]
-        ]
