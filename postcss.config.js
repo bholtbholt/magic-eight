@@ -19,5 +19,8 @@ module.exports = {
         $desktop: 'min-width: 700px',
       },
     }),
+    require('cssnano')({
+      preset: 'default',
+    }),
   ],
 };
