@@ -4,11 +4,10 @@
   "description": "A tutorial for learning Elm by building a magic eight ball",
   "main": "index.js",
   "scripts": {
-    "css-build": "node_modules/.bin/postcss src/css/*.css -c postcss.config.js -d dist/css",
-    "css-watch": "node_modules/.bin/postcss src/css/*.css -c postcss.config.js -d dist/css -w",
+    "css-build": "node_modules/.bin/postcss src/css/index.css -c postcss.config.js -o dist/css/index.css",
     "elm-build": "node_modules/.bin/elm-make src/Main.elm --output=dist/elm.js",
     "clean-dist": "rm -rf dist/",
-    "start": "node_modules/.bin/elm-live src/Main.elm --output=dist/elm.js --port=3000 & yarn css-watch",
+    "start": "node_modules/.bin/elm-live src/Main.elm --output=dist/elm.js --port=3000 & yarn css-build -w",
     "build": "yarn clean-dist && yarn css-build && yarn elm-build"
   },
   "author": "bholtbholt",
@@ -19,6 +18,7 @@
     "elm-format": "^0.6.1-alpha",
     "elm-live": "^2.7.5",
     "postcss-cli": "^4.1.0",
+    "postcss-import": "^11.1.0",
     "postcss-nested": "^2.1.2",
     "postcss-simple-vars": "^4.1.0",
     "prettier": "^1.5.3"
