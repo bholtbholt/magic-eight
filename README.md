@@ -82,7 +82,7 @@ Our magic-eight ball _always_ shows the triangle, but real magic-eight balls ref
 * [ ] Import `Keyed` for use in the view and convert the `div` with the `window` class into a keyed node. _Hint:_ A keyed node takes a tuple, a string identifier and a regular HTML list. We want to use the `responseIndex` as the identifier.
 * [ ] Assign the `responseIndex` to the random integer returned in the `ReturnResponse` update branch.
 
-## Leave Your Fate to the Magic-Eight Ball [Final](https://ellie-app.com/cJThH7q7Ja1/8)
+## Leave Your Fate to the Magic-Eight Ball [Completed Ellie Link](https://ellie-app.com/cJThH7q7Ja1/8)
 
 You've completed the lesson!
 
